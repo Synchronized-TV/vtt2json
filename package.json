@@ -1,0 +1,18 @@
+{
+  "name": "vtt-json",
+  "version": "0.0.1",
+  "main": "./lib/vtt-json.js",
+  "bin": "./bin/vtt-json.js",
+  "dependencies": {
+    "byline": "^4.1.1",
+    "hoek": "^2.14.0",
+    "inherits": "^2.0.1",
+    "joi": "^6.6.1",
+    "minimist": "^1.1.0",
+    "node-expat": "^2.3.9",
+    "object-assign": "^1.0.0",
+    "split": "^0.3.0",
+    "through2": "^0.6.1",
+    "xml2json": "^0.9.0"
+  }
+}
