@@ -2,19 +2,14 @@ Usage
 =====
 
 Use a vtt file like this :
-```json
+```js
 WEBVTT
 Region: id=aside
 Region: id=wrapper
 
 1
 00:00:05.000 --> 00:00:10.000 region:aside
-{
-    "type": "Badge",
-    "props": {
-        "title": "Badge in region aside"
-    }
-}
+<Badge title="Badge in region aside"/>
 
 2
 00:00:07.000 --> 00:00:12.000 region:wrapper
@@ -127,4 +122,16 @@ And then compute the state for each step :
 		"state": {}
 	}
 ]
+```
+
+You can use expressions in JSX :
+```js
+<Badge test={[1,2,3]}/>
+```
+
+Children :
+```js
+<Badge>
+  <div/>
+</Badge>
 ```
