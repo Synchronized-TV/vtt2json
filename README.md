@@ -59,7 +59,7 @@ It will first internally convert the vtt file to json :
 ```
 
 And then compute the state for each step :
-```
+```json
 [
 	{
 		"time": "5",
