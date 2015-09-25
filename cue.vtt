@@ -1,0 +1,27 @@
+WEBVTT
+Region: id=aside
+Region: id=wrapper
+
+1
+00:00:05.000 --> 00:00:10.000 region:aside
+{
+    "type": "Badge",
+    "props": {
+        "title": "Badge in region aside"
+    }
+}
+
+2
+00:00:07.000 --> 00:00:12.000 region:wrapper
+{
+    "type": "div",
+    "props": {
+        "className": "test"
+    }
+}
+
+3
+00:00:20.000 --> 00:00:23.000 region:wrapper
+{
+    "className": "wide"
+}

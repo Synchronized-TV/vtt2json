@@ -1,0 +1,62 @@
+{
+	"items": [
+		{
+			"id": "1",
+			"startTime": 5,
+			"endTime": 10,
+			"payload": {
+				"type": "Badge",
+				"props": {
+					"key": "badge01",
+					"title": "Badge in region aside",
+					"country": "jpn",
+					"className": "wide"
+				}
+			},
+			"region": "aside",
+			"type": "cue"
+		},
+		{
+			"id": "2",
+			"startTime": 10,
+			"endTime": 12,
+			"payload": {
+				"type": "Badge",
+				"props": {
+					"key": "badge01",
+					"title": "Badge in region aside updated",
+					"country": "fra",
+					"className": "wide"
+				}
+			},
+			"type": "cue",
+			"region": "aside"
+		},
+		{
+			"id": "3",
+			"startTime": 15,
+			"endTime": 17,
+			"payload": {
+				"type": "Badge",
+				"props": {
+					"key": "badge01",
+					"title": "Badge in region other",
+					"country": "fra",
+					"className": "wide"
+				}
+			},
+			"type": "cue",
+			"region": "other"
+		},
+		{
+			"id": "4",
+			"startTime": 20,
+			"endTime": 23,
+			"payload": {
+				"className": "wide"
+			},
+			"type": "cue",
+			"region": "wrapper"
+		}
+	]
+}
