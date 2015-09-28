@@ -1,6 +1,6 @@
 {
   "name": "vtt-json",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/vtt-json.js",
   "bin": "./bin/vtt-json.js",
   "dependencies": {

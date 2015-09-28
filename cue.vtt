@@ -3,36 +3,46 @@ Region: id=bottom
 Region: id=left
 Region: id=wrapper
 
-10
 00:00:05.000 --> 00:00:12.000 region:left
 <WorldSurface type='definition' id='exposedHabitats' className='fade-in'/>
 
-20
 00:00:05.000 --> 00:00:22.000 region:bottom
-<Info type='definition' id='exposedHabitats' className='fade-in'/>
+<Info key='0' type='definition' id='exposedHabitats' className='fade-in'/>
 
-30
 00:00:12.000 --> 00:00:22.000 region:left
-<WorldSurface type='definition' id='exposedHabitats' className='fade-in'>
+<WorldSurface type='definition' id='exposedHabitats'>
   <WorldCircle percent={ 50 } className='fade-in'/>
 </WorldSurface>
-<Info type='definition' id='exposedHabitats' className='fade-out'/>
 
-40
 00:00:22.000 --> 00:00:23.000 region:left
 <WorldSurface type='definition' id='exposedHabitats' className='fade-out'>
-  <WorldCircle percent={ 50 } className='fade-in'/>
+  <WorldCircle percent={ 50 }/>
 </WorldSurface>
 
-20
 00:00:22.000 --> 00:00:32.000 region:bottom
-<Info type='definition' id='exposedHabitats' className='fade-out'/>
-<Info type='definition' id='exposedHabitats' className='fade-in' displayIcon={ true }/>
+<Info key='0' type='definition' id='exposedHabitats' className='fade-out'/>
+<Info key='1' type='definition' id='exposedHabitats' className='fade-in' displayIcon={ true }/>
 
-20
-00:00:32.000 --> 00:00:42.000 region:left
-<Speed speed={ 48 } type='animal' id='cheetah' className='fade-in'/>
+00:00:32.000 --> 00:00:33.000 region:bottom
+<Info key='1' type='definition' id='exposedHabitats' className='fade-out' displayIcon={ true }/>
 
-20
-00:00:42.000 --> 00:00:47.000 region:left
-<Speed speed={ 59 } type='animal' id='cheetah' className='fade-in'/>
+00:00:36.000 --> 00:00:59.000 region:bottom
+<Info key='0' type='animal' id='cheetah' className='fade-in' displayIcon={ true }/>
+
+00:00:41.000 --> 00:00:46.000 region:left
+<Speed from={ 48 } to={ 54 } duration={ 5 } type='animal' id='cheetah' className='fade-in'/>
+
+00:00:46.000 --> 00:00:49.000 region:left
+<Speed from={ 54 } to={ 74 } duration={ 5 } type='animal' id='cheetah'/>
+
+00:00:49.000 --> 00:00:59.000 region:left
+<Speed from={ 74 } to={ 134 } duration={ 10 } type='animal' id='cheetah'/>
+
+00:00:59.000 --> 00:01:00.000 region:left
+<Speed from={ 134 } to={ 136 } duration={ 1 } type='animal' id='cheetah' className='fade-out'/>
+
+00:01:00.000 --> 00:01:01.000 region:left
+<Speed className='hidden'/>
+
+00:00:59.000 --> 00:01:00.000 region:bottom
+<Info key='0' type='animal' id='cheetah' className='fade-out'/>

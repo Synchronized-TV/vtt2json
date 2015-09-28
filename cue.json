@@ -16,6 +16,7 @@
 				{
 					"type": "Info",
 					"props": {
+						"key": "0",
 						"type": "definition",
 						"id": "exposedHabitats",
 						"className": "fade-in"
@@ -33,7 +34,6 @@
 					"props": {
 						"type": "definition",
 						"id": "exposedHabitats",
-						"className": "fade-in",
 						"children": [
 							{
 								"type": "WorldCircle",
@@ -44,20 +44,13 @@
 							}
 						]
 					}
-				},
-				{
-					"type": "Info",
-					"props": {
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-out"
-					}
 				}
 			],
 			"bottom": [
 				{
 					"type": "Info",
 					"props": {
+						"key": "0",
 						"type": "definition",
 						"id": "exposedHabitats",
 						"className": "fade-in"
@@ -69,6 +62,27 @@
 	{
 		"time": "22",
 		"state": {
+			"bottom": [
+				{
+					"type": "Info",
+					"props": {
+						"key": "0",
+						"type": "definition",
+						"id": "exposedHabitats",
+						"className": "fade-out"
+					}
+				},
+				{
+					"type": "Info",
+					"props": {
+						"key": "1",
+						"type": "definition",
+						"id": "exposedHabitats",
+						"className": "fade-in",
+						"displayIcon": true
+					}
+				}
+			],
 			"left": [
 				{
 					"type": "WorldSurface",
@@ -80,30 +94,10 @@
 							{
 								"type": "WorldCircle",
 								"props": {
-									"percent": 50,
-									"className": "fade-in"
+									"percent": 50
 								}
 							}
 						]
-					}
-				}
-			],
-			"bottom": [
-				{
-					"type": "Info",
-					"props": {
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-out"
-					}
-				},
-				{
-					"type": "Info",
-					"props": {
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-in",
-						"displayIcon": true
 					}
 				}
 			]
@@ -116,6 +110,7 @@
 				{
 					"type": "Info",
 					"props": {
+						"key": "0",
 						"type": "definition",
 						"id": "exposedHabitats",
 						"className": "fade-out"
@@ -124,6 +119,7 @@
 				{
 					"type": "Info",
 					"props": {
+						"key": "1",
 						"type": "definition",
 						"id": "exposedHabitats",
 						"className": "fade-in",
@@ -136,11 +132,63 @@
 	{
 		"time": "32",
 		"state": {
+			"bottom": [
+				{
+					"type": "Info",
+					"props": {
+						"key": "1",
+						"type": "definition",
+						"id": "exposedHabitats",
+						"className": "fade-out",
+						"displayIcon": true
+					}
+				}
+			]
+		}
+	},
+	{
+		"time": "33",
+		"state": {}
+	},
+	{
+		"time": "36",
+		"state": {
+			"bottom": [
+				{
+					"type": "Info",
+					"props": {
+						"key": "0",
+						"type": "animal",
+						"id": "cheetah",
+						"className": "fade-in",
+						"displayIcon": true
+					}
+				}
+			]
+		}
+	},
+	{
+		"time": "41",
+		"state": {
+			"bottom": [
+				{
+					"type": "Info",
+					"props": {
+						"key": "0",
+						"type": "animal",
+						"id": "cheetah",
+						"className": "fade-in",
+						"displayIcon": true
+					}
+				}
+			],
 			"left": [
 				{
 					"type": "Speed",
 					"props": {
-						"speed": 48,
+						"from": 48,
+						"to": 54,
+						"duration": 5,
 						"type": "animal",
 						"id": "cheetah",
 						"className": "fade-in"
@@ -150,23 +198,107 @@
 		}
 	},
 	{
-		"time": "42",
+		"time": "46",
+		"state": {
+			"bottom": [
+				{
+					"type": "Info",
+					"props": {
+						"key": "0",
+						"type": "animal",
+						"id": "cheetah",
+						"className": "fade-in",
+						"displayIcon": true
+					}
+				}
+			],
+			"left": [
+				{
+					"type": "Speed",
+					"props": {
+						"from": 54,
+						"to": 74,
+						"duration": 5,
+						"type": "animal",
+						"id": "cheetah"
+					}
+				}
+			]
+		}
+	},
+	{
+		"time": "49",
+		"state": {
+			"bottom": [
+				{
+					"type": "Info",
+					"props": {
+						"key": "0",
+						"type": "animal",
+						"id": "cheetah",
+						"className": "fade-in",
+						"displayIcon": true
+					}
+				}
+			],
+			"left": [
+				{
+					"type": "Speed",
+					"props": {
+						"from": 74,
+						"to": 134,
+						"duration": 10,
+						"type": "animal",
+						"id": "cheetah"
+					}
+				}
+			]
+		}
+	},
+	{
+		"time": "59",
+		"state": {
+			"bottom": [
+				{
+					"type": "Info",
+					"props": {
+						"key": "0",
+						"type": "animal",
+						"id": "cheetah",
+						"className": "fade-out"
+					}
+				}
+			],
+			"left": [
+				{
+					"type": "Speed",
+					"props": {
+						"from": 134,
+						"to": 136,
+						"duration": 1,
+						"type": "animal",
+						"id": "cheetah",
+						"className": "fade-out"
+					}
+				}
+			]
+		}
+	},
+	{
+		"time": "60",
 		"state": {
 			"left": [
 				{
 					"type": "Speed",
 					"props": {
-						"speed": 59,
-						"type": "animal",
-						"id": "cheetah",
-						"className": "fade-in"
+						"className": "hidden"
 					}
 				}
 			]
 		}
 	},
 	{
-		"time": "47",
+		"time": "61",
 		"state": {}
 	}
 ]
