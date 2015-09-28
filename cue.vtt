@@ -1,27 +1,38 @@
 WEBVTT
-Region: id=aside
+Region: id=bottom
+Region: id=left
 Region: id=wrapper
 
-1
-00:00:05.000 --> 00:00:10.000 region:aside
-{
-    "type": "Badge",
-    "props": {
-        "title": "Badge in region aside"
-    }
-}
+10
+00:00:05.000 --> 00:00:12.000 region:left
+<WorldSurface type='definition' id='exposedHabitats' className='fade-in'/>
 
-2
-00:00:07.000 --> 00:00:12.000 region:wrapper
-{
-    "type": "div",
-    "props": {
-        "className": "test"
-    }
-}
+20
+00:00:05.000 --> 00:00:22.000 region:bottom
+<Info type='definition' id='exposedHabitats' className='fade-in'/>
 
-3
-00:00:20.000 --> 00:00:23.000 region:wrapper
-{
-    "className": "wide"
-}
+30
+00:00:12.000 --> 00:00:22.000 region:left
+<WorldSurface type='definition' id='exposedHabitats' className='fade-in'>
+  <WorldCircle percent={ 50 } className='fade-in'/>
+</WorldSurface>
+<Info type='definition' id='exposedHabitats' className='fade-out'/>
+
+40
+00:00:22.000 --> 00:00:23.000 region:left
+<WorldSurface type='definition' id='exposedHabitats' className='fade-out'>
+  <WorldCircle percent={ 50 } className='fade-in'/>
+</WorldSurface>
+
+20
+00:00:22.000 --> 00:00:32.000 region:bottom
+<Info type='definition' id='exposedHabitats' className='fade-out'/>
+<Info type='definition' id='exposedHabitats' className='fade-in' displayIcon={ true }/>
+
+20
+00:00:32.000 --> 00:00:42.000 region:left
+<Speed speed={ 48 } type='animal' id='cheetah' className='fade-in'/>
+
+20
+00:00:42.000 --> 00:00:47.000 region:left
+<Speed speed={ 59 } type='animal' id='cheetah' className='fade-in'/>
