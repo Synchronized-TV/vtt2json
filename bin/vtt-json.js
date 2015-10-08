@@ -36,7 +36,7 @@ if (argv._[2] === 'parse') {
             cb(null, generateCue(obj))
         }))
         .pipe(through2.obj(function(obj, enc, cb) {
-            cb(null, JSON.stringify(obj, null, '\t'))
+            cb(null, JSON.stringify(obj))
         }))
         .pipe(output);
 }
