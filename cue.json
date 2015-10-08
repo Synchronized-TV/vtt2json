@@ -1,33 +1,22 @@
-[
-	{
-		"time": "5",
-		"state": {
-			"left": [
-				{
-					"type": "WorldSurface",
-					"props": {
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-in"
-					}
-				}
-			],
+{
+	"regions": [
+		"bottom",
+		"left"
+	],
+	"cue": {
+		"5": {
 			"bottom": [
 				{
 					"type": "Info",
 					"props": {
-						"key": "0",
 						"type": "definition",
 						"id": "exposedHabitats",
 						"className": "fade-in"
 					}
 				}
 			]
-		}
-	},
-	{
-		"time": "12",
-		"state": {
+		},
+		"12": {
 			"left": [
 				{
 					"type": "WorldSurface",
@@ -45,260 +34,63 @@
 						]
 					}
 				}
-			],
+			]
+		},
+		"22": {
+			"bottom": [],
+			"left": []
+		},
+		"25": {
 			"bottom": [
 				{
 					"type": "Info",
 					"props": {
-						"key": "0",
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-in"
+						"type": "definition"
 					}
 				}
 			]
-		}
-	},
-	{
-		"time": "22",
-		"state": {
+		},
+		"28": {
+			"bottom": []
+		},
+		"145": {
 			"bottom": [
 				{
 					"type": "Info",
 					"props": {
-						"key": "0",
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-out"
-					}
-				},
-				{
-					"type": "Info",
-					"props": {
-						"key": "1",
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-in",
-						"displayIcon": true
+						"type": "definition"
 					}
 				}
-			],
+			]
+		},
+		"148": {
+			"bottom": []
+		},
+		"205": {
+			"bottom": {
+				"test": "ok"
+			}
+		},
+		"208": {
+			"bottom": []
+		},
+		"5.123": {
 			"left": [
 				{
 					"type": "WorldSurface",
 					"props": {
 						"type": "definition",
 						"id": "exposedHabitats",
-						"className": "fade-out",
-						"children": [
-							{
-								"type": "WorldCircle",
-								"props": {
-									"percent": 50
-								}
-							}
-						]
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "23",
-		"state": {
-			"bottom": [
-				{
-					"type": "Info",
-					"props": {
-						"key": "0",
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-out"
+						"className": "fade-in"
 					}
 				},
 				{
 					"type": "Info",
 					"props": {
-						"key": "1",
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-in",
-						"displayIcon": true
+						"type": "definition"
 					}
 				}
 			]
 		}
-	},
-	{
-		"time": "32",
-		"state": {
-			"bottom": [
-				{
-					"type": "Info",
-					"props": {
-						"key": "1",
-						"type": "definition",
-						"id": "exposedHabitats",
-						"className": "fade-out",
-						"displayIcon": true
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "33",
-		"state": {}
-	},
-	{
-		"time": "36",
-		"state": {
-			"bottom": [
-				{
-					"type": "Info",
-					"props": {
-						"key": "0",
-						"type": "animal",
-						"id": "cheetah",
-						"className": "fade-in",
-						"displayIcon": true
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "41",
-		"state": {
-			"bottom": [
-				{
-					"type": "Info",
-					"props": {
-						"key": "0",
-						"type": "animal",
-						"id": "cheetah",
-						"className": "fade-in",
-						"displayIcon": true
-					}
-				}
-			],
-			"left": [
-				{
-					"type": "Speed",
-					"props": {
-						"from": 48,
-						"to": 54,
-						"duration": 5,
-						"type": "animal",
-						"id": "cheetah",
-						"className": "fade-in"
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "46",
-		"state": {
-			"bottom": [
-				{
-					"type": "Info",
-					"props": {
-						"key": "0",
-						"type": "animal",
-						"id": "cheetah",
-						"className": "fade-in",
-						"displayIcon": true
-					}
-				}
-			],
-			"left": [
-				{
-					"type": "Speed",
-					"props": {
-						"from": 54,
-						"to": 74,
-						"duration": 5,
-						"type": "animal",
-						"id": "cheetah"
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "49",
-		"state": {
-			"bottom": [
-				{
-					"type": "Info",
-					"props": {
-						"key": "0",
-						"type": "animal",
-						"id": "cheetah",
-						"className": "fade-in",
-						"displayIcon": true
-					}
-				}
-			],
-			"left": [
-				{
-					"type": "Speed",
-					"props": {
-						"from": 74,
-						"to": 134,
-						"duration": 10,
-						"type": "animal",
-						"id": "cheetah"
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "59",
-		"state": {
-			"bottom": [
-				{
-					"type": "Info",
-					"props": {
-						"key": "0",
-						"type": "animal",
-						"id": "cheetah",
-						"className": "fade-out"
-					}
-				}
-			],
-			"left": [
-				{
-					"type": "Speed",
-					"props": {
-						"from": 134,
-						"to": 136,
-						"duration": 1,
-						"type": "animal",
-						"id": "cheetah",
-						"className": "fade-out"
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "60",
-		"state": {
-			"left": [
-				{
-					"type": "Speed",
-					"props": {
-						"className": "hidden"
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "61",
-		"state": {}
 	}
-]
+}
