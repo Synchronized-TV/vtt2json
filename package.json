@@ -8,6 +8,7 @@
     "hoek": "^2.14.0",
     "inherits": "^2.0.1",
     "joi": "^6.6.1",
+    "json-stable-stringify": "^1.0.0",
     "minimist": "^1.1.0",
     "node-expat": "^2.3.9",
     "object-assign": "^1.0.0",

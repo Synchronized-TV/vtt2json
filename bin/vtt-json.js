@@ -2,6 +2,7 @@
 var fs = require('fs');
 var minimist = require('minimist');
 var through2 = require('through2');
+var stringify = require('json-stable-stringify');
 
 var vtt = require('./../');
 var generateCue = require('../lib/generateCue');
@@ -36,7 +37,12 @@ if (argv._[2] === 'parse') {
             cb(null, generateCue(obj))
         }))
         .pipe(through2.obj(function(obj, enc, cb) {
-            cb(null, JSON.stringify(obj, null, ' '))
+            //console.log(JSON.stringify(obj, null, ' ').indexOf('testr') > -1);
+            //cb(null, JSON.stringify(obj, null, ' '))
+            cb(null, stringify(obj, function (a, b) {
+                // Important: sort by time (keys)
+                return parseFloat(a.key) - parseFloat(b.key);
+            }, { space: '  ' }))
         }))
         .pipe(output);
 }
