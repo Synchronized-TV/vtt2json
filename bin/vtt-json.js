@@ -15,9 +15,12 @@ function getConcatenatedReadStream(directory, onStream) {
         onStream(fs.createReadStream(directory));
     }
     else {
-        fs.readdir(directory, function (err, files) {
-          var concatenated = '';
-          async.eachSeries(files, function (file, callback) {
+        var files = ['header.vtt', 'manual.vtt', 'generated.vtt'].filter(function(file) {
+            return fs.existsSync(path.join(directory, file));
+        });
+
+        var concatenated = '';
+        async.eachSeries(files, function (file, callback) {
             if (file.indexOf('.vtt') === -1) { return callback(); }
 
             var currentFile = path.join(directory, file);
@@ -26,16 +29,15 @@ function getConcatenatedReadStream(directory, onStream) {
 
               var stream = fs.createReadStream(currentFile).on('end', function () {
                 callback();
-              }).on('data', function (data) { concatenated += data.toString('utf8'); });
+              }).on('data', function (data) { concatenated += '\n' + data.toString('utf8'); });
             });
-          }, function() {
+            }, function() {
             var s = new Stream.Readable();
             s._read = function noop() {};
             s.push(concatenated);
             s.push(null);
 
             onStream(s);
-          })
         });
     }
 }
