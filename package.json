@@ -20,5 +20,9 @@
     "split": "^0.3.0",
     "through2": "^0.6.1",
     "xml2json": "^0.9.0"
+  },
+  "scripts": {
+    "compile": "babel ./src/babel-plugin-jsxjs.js --out-file ./lib/babel-plugin-jsxjs.js",
+    "prepublish": "npm run compile"
   }
 }
