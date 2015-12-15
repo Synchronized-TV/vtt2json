@@ -24,6 +24,7 @@ if (argv.version) {
 }
 var output = (argv.output && argv.output !== '-') ? fs.createWriteStream(argv.output) : process.stdout;
 
+var input;
 if (filename === '-' || !filename) input = process.stdin;
 else if (fs.existsSync(filename)) input = fs.createReadStream(filename);
 else {
