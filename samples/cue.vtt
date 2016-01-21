@@ -5,7 +5,6 @@ Region: id=wrapper
 
 00:00:05.123 --> 00:00:12.000 region:left
 <WorldSurface type='definition' id='exposedHabitats' className='fade-in'/>
-<Info type='definition'/>
 
 00:00:05.000 --> 00:00:22.000 region:bottom
 <Info type='definition' id='exposedHabitats' className='fade-in'/>

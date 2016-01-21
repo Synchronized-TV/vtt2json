@@ -2,11 +2,11 @@ module.exports = function generateCue(cue) {
   var state = {};
   var steps = {};
 
-  var items = cue.items
+  var items = cue
     .map(function(item) {
       return [
-        { op: "remove", time: parseFloat(item.endTime), region: item.region, payload: item.payload },
-        { op: "add", time: parseFloat(item.startTime), region: item.region, payload: item.payload }
+        { op: "remove", time: parseFloat(item.end), region: item.region, payload: item.payload },
+        { op: "add", time: parseFloat(item.start), region: item.region, payload: item.payload }
       ];
     });
 
@@ -24,13 +24,9 @@ module.exports = function generateCue(cue) {
       state[item.region] = [];
     }
 
-    if (cue.regions.indexOf(item.region) === -1) {
-      cue.regions.push(item.region);
-    }
-
     steps[item.time] = steps[item.time] || {};
     steps[item.time][item.region] = state[item.region];
   });
 
-  return { regions: cue.regions, cue: steps };
+  return steps;
 };
