@@ -16,6 +16,7 @@ export default function JSXParser(input) {
 
     // TODO: Safe eval.
     output = eval(code).props.children;
+    //output = output.length > 1 ? output : output[0];
   }
   catch(e) {
     console.error('Could not process input', input);

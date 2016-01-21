@@ -7,8 +7,6 @@ const cueHeaderRe = /([0-9]+:[0-9]+:[0-9]+.[0-9]+) --> ([0-9]+:[0-9]+:[0-9]+.[0-
 
 export default function bodyTransformer(...parsers) {
   return function(stream) {
-    //result.cues = [];
-
     return stream
       .pipe(split(bodySplit))
       .pipe(through(function(chunk) {
@@ -30,14 +28,11 @@ export default function bodyTransformer(...parsers) {
               }
             }
 
-            this.queue(JSON.stringify(payload));
+            const entry = { start, end, region, payload };
+
+            this.queue(entry);
           }
         }
-      }))
-      // .on('data', data => {
-      //   if (data) {
-      //     result.cues.push(data);
-      //   }
-      // });
+      }));
   }
 }

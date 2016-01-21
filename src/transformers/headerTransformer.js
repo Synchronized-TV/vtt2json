@@ -5,8 +5,6 @@ const headerSplit = /(WEBVTT([\.\s\S]*?)\n\n)/;
 const regionRe = /Region: id=(.*)/;
 
 export default function headerTransformer(stream) {
-  //result.regions = [];
-
   return stream
     .pipe(split())
     .pipe(through(function(chunk) {
@@ -15,8 +13,5 @@ export default function headerTransformer(stream) {
       if (matches) {
         this.queue(matches[1]);
       }
-    }))
-    // .on('data', data => {
-    //   result.regions.push(data);
-    // });
+    }));
 }
