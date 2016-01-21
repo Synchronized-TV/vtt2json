@@ -19,13 +19,12 @@ import compatGenerateCue from './compatGenerateCue';
 // Ideally, we would directly write the file from the stream.
 // Figure out what the format should look like, having "regions" and "cue"
 // is not practical to process streams directly, and regions might not be needed.
-let result = {
-  regions: [],
-  cue: []
-};
-
 function handleStream(stream, outputFile, streamHandlers) {
-  let result = {};
+  let result = {
+    regions: [],
+    cue: []
+  };
+
   let i = 0;
 
   for (let id in streamHandlers) {
