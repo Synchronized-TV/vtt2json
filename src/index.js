@@ -19,7 +19,7 @@ import compatGenerateCue from './compatGenerateCue';
 // Ideally, we would directly write the file from the stream.
 // Figure out what the format should look like, having "regions" and "cue"
 // is not practical to process streams directly, and regions might not be needed.
-function handleStream(stream, outputFile, streamHandlers) {
+function handleStream(stream, outputFile, streamHandlers, cb) {
   let result = {
     regions: [],
     cue: []
@@ -40,16 +40,19 @@ function handleStream(stream, outputFile, streamHandlers) {
         if (i === Object.keys(streamHandlers).length - 1) {
           result.cue = compatGenerateCue(result.cue);
           fs.writeFileSync(outputFile, stringify(result));
+          if (cb) {
+            cb(result);
+          }
         }
 
         i++;
-      });    
+      });
   }
 }
 
-export default function convert(stream, outputFile) {
+export default function convert(stream, outputFile, cb) {
   handleStream(stream, outputFile, {
     regions: headerTransformer,
     cue: bodyTransformer(JSXParser, JSONParser)
-  });
+  }, cb);
 }
