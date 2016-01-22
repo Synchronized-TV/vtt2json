@@ -28,7 +28,7 @@ export default function bodyTransformer(...parsers) {
               }
             }
 
-            const entry = { start, end, region, payload };
+            const entry = { start, end, region, payload, chunk };
 
             this.queue(entry);
           }
