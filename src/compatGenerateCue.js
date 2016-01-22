@@ -2,6 +2,10 @@ module.exports = function generateCue(cue) {
   var state = {};
   var steps = {};
 
+  for (var i in cue) {
+    checkOverlap(cue[i], cue);
+  }
+
   var items = cue
     .map(function(item) {
       return [
@@ -30,3 +34,17 @@ module.exports = function generateCue(cue) {
 
   return steps;
 };
+
+function checkOverlap(item, cue) {
+  for (var i in cue) {
+    if (cue[i] !== item && cue[i].region === item.region && overlaps(item, cue[i])) {
+      console.log('overlap');
+      console.log(item.chunk.split('\n')[0]);
+      console.log(cue[i].chunk.split('\n')[0]);
+    }
+  }
+}
+
+function overlaps(a, b) {
+  return a.start < b.end && b.start < a.end;
+}
