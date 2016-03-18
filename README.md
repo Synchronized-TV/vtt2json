@@ -1,137 +1,74 @@
-Usage
-=====
+### Usage
+```
+vtt-json.js input (output) (opts)
+```
 
-Use a vtt file like this :
+* `input` : a path to a VTT file.
+* `output` (optional) : a path to the output JSON file. Will use input filename with .json extension if not provided.
+* `opts` :
+	* `--plugins` : a comma separated list of plugins. a plugin can either be one of the default plugins, npm modules, or a relative path to a custom plugin. *default value*: `timecodes,regions,text,json,html`
+
+#### Example
+```
+./bin/vtt-json.js tests/samples/cue.vtt cue.json --plugins=timecodes,regions,json,jsx,./my-custom-plugin
+```
+
+### File structure
+An input file looks like this :
 ```js
 WEBVTT
-Region: id=aside
-Region: id=wrapper
+Region: id=left
 
-1
-00:00:05.000 --> 00:00:10.000 region:aside
-<Badge title="Badge in region aside"/>
-
-2
-00:00:07.000 --> 00:00:12.000 region:wrapper
+00:00:05.123 --> 00:00:12.000 region:left
 {
-    "type": "div",
-    "props": {
-        "className": "test"
-    }
-}
-
-3
-00:00:20.000 --> 00:00:23.000 region:wrapper
-{
-    "className": "wide"
+  "message": "Hello !"
 }
 ```
 
+The output object looks like this :
 ```
-./bin/vtt-json.js parse cue.vtt --output=cue.json
-```
-
-It will first internally convert the vtt file to json :
-```json
 {
-	"items": [
-		{
-			"id": "1",
-			"startTime": 5,
-			"endTime": 10,
-			"payload": {
-				"type": "Badge",
-				"props": {
-					"title": "Badge in region aside"
-				}
-			},
-			"region": "aside",
-			"type": "cue"
-		},
-    ...
-	]
+  "cues": [
+    {
+      "region": "left",
+      "start": 5.123,
+      "end": 12,
+      "json": {
+        "message": "Hello !"
+      }
+    },
+    //...
+  ],
+  "regions": [
+    "left"
+  ]
 }
 ```
 
-And then compute the state for each step :
-```json
-[
-	{
-		"time": "5",
-		"state": {
-			"aside": [
-				{
-					"type": "Badge",
-					"props": {
-						"title": "Badge in region aside"
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "7",
-		"state": {
-			"aside": [
-				{
-					"type": "Badge",
-					"props": {
-						"title": "Badge in region aside"
-					}
-				}
-			],
-			"wrapper": [
-				{
-					"type": "div",
-					"props": {
-						"className": "test"
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "10",
-		"state": {
-			"wrapper": [
-				{
-					"type": "div",
-					"props": {
-						"className": "test"
-					}
-				}
-			]
-		}
-	},
-	{
-		"time": "12",
-		"state": {}
-	},
-	{
-		"time": "20",
-		"state": {
-			"wrapper": [
-				{
-					"className": "wide"
-				}
-			]
-		}
-	},
-	{
-		"time": "23",
-		"state": {}
-	}
-]
-```
+### Plugins
+Each plugin can parse the vtt header, the cue metadata, the cue body, and returns corresponding objects. The output is a merged object of what plugins return, at either the root level for headers, or in cue objects for cues.
 
-You can use expressions in JSX :
-```js
-<Badge test={[1,2,3]}/>
-```
+For example, the `timecodes` plugin parses the cue metadata timecode :
+`00:00:05.123 --> 00:00:12.000`
 
-Children :
-```js
-<Badge>
-  <div/>
-</Badge>
+And returns the following values that will be added to the cue object : 
+`{ "start": 5.123, "end": 12 }`
+
+Only one plugin can parse the cue body. The first plugin that successfully parses the content is used.
+
+#### Included plugins
+* `timecodes`
+* `regions`
+* `json`
+* `html`
+* `jsx`
+* `style`
+* `text`
+* `templates`
+
+#### Plugin API
+```
+export function headerParser(input) {};
+export function cueMetadataParser(input) {};
+export function cueBodyParser(input) {};
 ```

@@ -1,58 +1,31 @@
 import fs from 'fs';
-import headerTransformer from './transformers/headerTransformer';
-import bodyTransformer from './transformers/bodyTransformer';
-import JSXParser from './parsers/JSXParser';
-import JSONParser from './parsers/JSONParser';
-import stringify from 'json-stable-stringify';
-import compatGenerateCue from './compatGenerateCue';
-//import mergeStream from 'merge-stream';
+import headerParser from './headerParser';
+import bodyParser from './bodyParser';
 
-// const inputFile = process.argv[2];
-// const outputFile = process.argv[3] || inputFile.replace('.vtt', '.json');
+export * as plugins from './plugins';
 
-//const stream = fs.createReadStream(inputFile);
+export default function convert(inputFile, outputFile, plugins, cb) {
+  const stream = fs.createReadStream(inputFile);
 
-//const mergedStream = mergeStream(headerTransformer(stream), bodyTransformer(JSXParser, JSONParser)(stream));
-//mergedStream.pipe(fs.createWriteStream(outputFile));
+  let output = { cues: [] };
+  let done = 0;
 
-// TODO: This below is to stay compatible with current cue.json format.
-// Ideally, we would directly write the file from the stream.
-// Figure out what the format should look like, having "regions" and "cue"
-// is not practical to process streams directly, and regions might not be needed.
-function handleStream(stream, outputFile, streamHandlers, cb) {
-  let result = {
-    regions: [],
-    cue: []
-  };
-
-  let i = 0;
-
-  for (let id in streamHandlers) {
-    result[id] = [];
-
-    streamHandlers[id](stream, result)
-      .on('data', data => {
-        if (data) {
-          result[id].push(data);
+  function onEnd() {
+    if (++done >= 2) {
+      fs.writeFile(outputFile, JSON.stringify(output, null, '  '), () => {
+        if (cb) {
+          cb(output);
         }
-      })
-      .on('end', () => {
-        if (i === Object.keys(streamHandlers).length - 1) {
-          result.cue = compatGenerateCue(result.cue);
-          fs.writeFileSync(outputFile, stringify(result));
-          if (cb) {
-            cb(result);
-          }
-        }
-
-        i++;
+        console.log(`\n✓ ${inputFile} → ${outputFile}`);
       });
+    }
   }
-}
 
-export default function convert(stream, outputFile, cb) {
-  handleStream(stream, outputFile, {
-    regions: headerTransformer,
-    cue: bodyTransformer(JSXParser, JSONParser)
-  }, cb);
+  headerParser(stream, plugins)
+    .on('data', data => output = { ...output, ...data })
+    .on('end', onEnd);
+
+  bodyParser(stream, plugins)
+    .on('data', data => output.cues.push(data))
+    .on('end', onEnd);
 }

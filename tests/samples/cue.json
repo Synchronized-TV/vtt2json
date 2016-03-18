@@ -1,1 +1,51 @@
-{"cue":{"12":{"left":[{"props":{"children":[{"props":{"className":"fade-in","percent":50},"type":"WorldCircle"}],"id":"exposedHabitats","type":"definition"},"type":"WorldSurface"}]},"145":{"bottom":[{"props":{"type":"definition"},"type":"Info"}]},"148":{"bottom":[]},"205":{"bottom":{"test":"ok"}},"208":{"bottom":[]},"22":{"bottom":[],"left":[]},"25":{"bottom":[{"props":{"type":"definition"},"type":"Info"}]},"28":{"bottom":[]},"5":{"bottom":[{"props":{"className":"fade-in","id":"exposedHabitats","type":"definition"},"type":"Info"}]},"5.123":{"left":[{"props":{"className":"fade-in","id":"exposedHabitats","type":"definition"},"type":"WorldSurface"}]}},"regions":["bottom","left","wrapper"]}
+{
+  "cues": [
+    {
+      "region": "left",
+      "text": "Hello John !"
+    },
+    {
+      "region": "bottom",
+      "html": "<div>\n  Hello John !\n</div>"
+    },
+    {
+      "region": "bottom",
+      "json": {
+        "text": "Hello John !"
+      }
+    },
+    {
+      "region": "bottom",
+      "jsx": {
+        "type": "Button",
+        "props": {
+          "type": "important",
+          "children": [
+            "Hello John !"
+          ]
+        }
+      }
+    },
+    {
+      "region": "bottom",
+      "template": {
+        "id": "name-box",
+        "host": "\n  <div>\n    <title>Hello</title>\n    <name>John</name>\n  </div>\n"
+      }
+    },
+    {
+      "region": "bottom",
+      "style": "<style>\n  body {\n    transform: rotate(45deg);\n  }\n  #header {\n    animation: pulse 2s;\n  }\n</style>\n"
+    }
+  ],
+  "regions": [
+    "bottom",
+    "left"
+  ],
+  "styles": [
+    "<style>\n    .title {\n      border: 2px solid brown;\n    }\n  </style>\n  <div class=\"outer\">\n    <div class=\"title\">\n      <content select=\"title\"></content>\n    </div>\n    <div class=\"name\">\n      <content select=\"name\"></content>\n    </div>\n  </div>\n</template>\n\n<style>\n  @keyframes pulse {\n    0% {\n      opacity: 1;\n    }\n    50% {\n      opacity: 0;\n    }\n    100% {\n      opacity: 1;\n    }\n  }\n</style>"
+  ],
+  "templates": [
+    "<template>\n  <style>\n    .title {\n      border: 2px solid brown;\n    }\n  </style>\n  <div class=\"outer\">\n    <div class=\"title\">\n      <content select=\"title\"></content>\n    </div>\n    <div class=\"name\">\n      <content select=\"name\"></content>\n    </div>\n  </div>\n</template>"
+  ]
+}

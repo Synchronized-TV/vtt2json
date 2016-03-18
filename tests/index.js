@@ -2,19 +2,22 @@ import assert from 'assert';
 import fs from 'fs';
 import path from 'path';
 
-import convert from '../src';
+import convert, { plugins as defaultPlugins } from '../src';
 
-describe('vtt-json', () => {
+const plugins = [];
 
-    it('should transform sample correctly ', (done) => {
+for (var i in defaultPlugins) {
+  plugins.push(defaultPlugins[i]);
+}
 
-        let inputStream = fs.createReadStream(path.join(__dirname, 'samples', 'cue.vtt'));
-        let expected = require(path.join(__dirname, 'samples', 'cue.json'));
+describe('vttx', () => {
+  it('should transform sample correctly ', (done) => {
+    let inputFile = path.join(__dirname, 'samples', 'cue.vtt');
+    let expected = require(path.join(__dirname, 'samples', 'cue.json'));
 
-        convert(inputStream, '/dev/null', data => {
-            assert.deepEqual(expected, data);
-            done();
-        });
-
+    convert(inputFile, '/dev/null', plugins, data => {
+      assert.deepEqual(expected, data);
+      done();
     });
-})
+  });
+});
