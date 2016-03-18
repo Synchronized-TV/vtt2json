@@ -3,15 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.jsx = exports.html = exports.templates = exports.style = exports.json = exports.text = exports.regions = exports.timecodes = undefined;
+exports.transition = exports.jsx = exports.html = exports.template = exports.style = exports.json = exports.text = exports.region = exports.timecode = undefined;
 
-var _timecodes2 = require('./timecodes');
+var _timecode2 = require('./timecode');
 
-var _timecodes = _interopRequireWildcard(_timecodes2);
+var _timecode = _interopRequireWildcard(_timecode2);
 
-var _regions2 = require('./regions');
+var _region2 = require('./region');
 
-var _regions = _interopRequireWildcard(_regions2);
+var _region = _interopRequireWildcard(_region2);
 
 var _text2 = require('./text');
 
@@ -25,9 +25,9 @@ var _style2 = require('./style');
 
 var _style = _interopRequireWildcard(_style2);
 
-var _templates2 = require('./templates');
+var _template2 = require('./template');
 
-var _templates = _interopRequireWildcard(_templates2);
+var _template = _interopRequireWildcard(_template2);
 
 var _html2 = require('./html');
 
@@ -37,13 +37,18 @@ var _jsx2 = require('./jsx');
 
 var _jsx = _interopRequireWildcard(_jsx2);
 
+var _transition2 = require('./transition');
+
+var _transition = _interopRequireWildcard(_transition2);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-exports.timecodes = _timecodes;
-exports.regions = _regions;
+exports.timecode = _timecode;
+exports.region = _region;
 exports.text = _text;
 exports.json = _json;
 exports.style = _style;
-exports.templates = _templates;
+exports.template = _template;
 exports.html = _html;
 exports.jsx = _jsx;
+exports.transition = _transition;

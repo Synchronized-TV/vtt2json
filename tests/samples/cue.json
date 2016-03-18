@@ -1,20 +1,32 @@
 {
   "cues": [
     {
+      "start": 0,
+      "end": 10,
       "region": "left",
+      "transition": "fade-in",
+      "transition-duration": "2s",
       "text": "Hello John !"
     },
     {
+      "start": 10,
+      "end": 20,
       "region": "bottom",
+      "transition": "cross-fade",
+      "transition-duration": "2s",
       "html": "<div>\n  Hello John !\n</div>"
     },
     {
+      "start": 20,
+      "end": 30,
       "region": "bottom",
       "json": {
         "text": "Hello John !"
       }
     },
     {
+      "start": 30,
+      "end": 40,
       "region": "bottom",
       "jsx": {
         "type": "Button",
@@ -27,6 +39,8 @@
       }
     },
     {
+      "start": 40,
+      "end": 50,
       "region": "bottom",
       "template": {
         "id": "name-box",
@@ -34,6 +48,8 @@
       }
     },
     {
+      "start": 50,
+      "end": 60,
       "region": "bottom",
       "style": "<style>\n  body {\n    transform: rotate(45deg);\n  }\n  #header {\n    animation: pulse 2s;\n  }\n</style>\n"
     }

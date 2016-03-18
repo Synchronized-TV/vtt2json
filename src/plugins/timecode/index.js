@@ -1,6 +1,6 @@
 import timecodeToSeconds from './timecodeToSeconds';
 
-export function timecodesCueMetadataParser(input) {
+export function cueMetadataParser(input) {
   let matches;
   let re = /([0-9]+:[0-9]+:[0-9]+.[0-9]+) --> ([0-9]+:[0-9]+:[0-9]+.[0-9]+)/;
 
