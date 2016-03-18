@@ -6,7 +6,7 @@ vtt-json.js input (output) (opts)
 * `input` : a path to a VTT file.
 * `output` (optional) : a path to the output JSON file. Will use input filename with .json extension if not provided.
 * `opts` :
-	* `--plugins` : a comma separated list of plugins. a plugin can either be one of the included plugins, npm modules, or a relative path to a custom plugin. *default value*: `timecodes,regions,text,json,html`
+  * `--plugins` : a comma separated list of plugins. a plugin can either be one of the included plugins, npm modules, or a relative path to a custom plugin. Order of plugins matter. *default value*: `timecodes,regions,text,json,html`
 
 #### Example
 ```
