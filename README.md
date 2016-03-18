@@ -110,10 +110,10 @@ Region: id=left
   }
 </style>
 
-00:00:00.000 --> 00:00:10.000 region:left
+00:00:00.000 --> 00:00:10.000 region:left transition:fade-in 2s
 Hello John !
 
-00:00:10.000 --> 00:00:20.000 region:bottom
+00:00:10.000 --> 00:00:20.000 region:bottom transition:cross-fade 2s
 <div>
   Hello John !
 </div>
