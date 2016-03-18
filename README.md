@@ -72,3 +72,76 @@ export function headerParser(input) {};
 export function cueMetadataParser(input) {};
 export function cueBodyParser(input) {};
 ```
+
+#### An example using all included plugins
+```js
+WEBVTT
+Region: id=bottom
+Region: id=left
+
+<template>
+  <style>
+    .title {
+      border: 2px solid brown;
+    }
+  </style>
+  <div class="outer">
+    <div class="title">
+      <content select="title"></content>
+    </div>
+    <div class="name">
+      <content select="name"></content>
+    </div>
+  </div>
+</template>
+
+<style>
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+00:00:00.000 --> 00:00:10.000 region:left
+Hello John !
+
+00:00:10.000 --> 00:00:20.000 region:bottom
+<div>
+  Hello John !
+</div>
+
+00:00:20.000 --> 00:00:30.000 region:bottom
+{
+  "text": "Hello John !"
+}
+
+00:00:30.000 --> 00:00:40.000 region:bottom
+<Button type='important'>
+  Hello John !
+</Button>
+
+00:00:40.000 --> 00:00:50.000 region:bottom
+<apply-template id="name-box">
+  <div>
+    <title>Hello</title>
+    <name>John</name>
+  </div>
+</apply-template>
+
+00:00:50.000 --> 00:00:60.000 region:bottom
+<style>
+  body {
+    transform: rotate(45deg);
+  }
+  #header {
+    animation: pulse 2s;
+  }
+</style>
+```
