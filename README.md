@@ -19,7 +19,7 @@ An input file looks like this :
 WEBVTT
 Region: id=left
 
-00:00:05.123 --> 00:00:12.000 region:left
+00:00:05.000 --> 00:00:12.000 region:left
 {
   "message": "Hello !"
 }
@@ -31,7 +31,7 @@ The output object looks like this :
   "cues": [
     {
       "region": "left",
-      "start": 5.123,
+      "start": 5,
       "end": 12,
       "json": {
         "message": "Hello !"
