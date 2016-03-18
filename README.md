@@ -26,7 +26,7 @@ Region: id=left
 ```
 
 The output object looks like this :
-```json
+```js
 {
   "cues": [
     {
