@@ -15,7 +15,7 @@ vtt-json.js input (output) (opts)
 
 ### File structure
 An input file looks like this :
-```js
+```
 WEBVTT
 Region: id=left
 
@@ -26,7 +26,7 @@ Region: id=left
 ```
 
 The output object looks like this :
-```
+```json
 {
   "cues": [
     {
@@ -67,14 +67,14 @@ Only one plugin can parse the cue body. The first plugin that successfully parse
 * `templates`
 
 #### Plugin API
-```
+```js
 export function headerParser(input) {};
 export function cueMetadataParser(input) {};
 export function cueBodyParser(input) {};
 ```
 
 #### An example using all included plugins
-```js
+```
 WEBVTT
 Region: id=bottom
 Region: id=left
