@@ -18,7 +18,7 @@ if (argv.version) {
   process.exit(0);
 }
 
-if (argv.help) {
+if (!argv._[2] || argv.help) {
   console.log("\nvtt-json.js input (output) (opts)\n\n" +
     "* input : a path to a VTT file.\n" +
     "* output (optional) : a path to the output JSON file. Will use input filename with .json extension if not provided.\n" +
