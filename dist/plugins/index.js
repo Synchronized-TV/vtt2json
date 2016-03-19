@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.transition = exports.jsx = exports.html = exports.template = exports.style = exports.json = exports.text = exports.region = exports.timecode = undefined;
+exports.raw = exports.transition = exports.jsx = exports.html = exports.template = exports.style = exports.json = exports.text = exports.region = exports.timecode = undefined;
 
 var _timecode2 = require('./timecode');
 
@@ -41,6 +41,10 @@ var _transition2 = require('./transition');
 
 var _transition = _interopRequireWildcard(_transition2);
 
+var _raw2 = require('./raw');
+
+var _raw = _interopRequireWildcard(_raw2);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 exports.timecode = _timecode;
@@ -52,3 +56,4 @@ exports.template = _template;
 exports.html = _html;
 exports.jsx = _jsx;
 exports.transition = _transition;
+exports.raw = _raw;

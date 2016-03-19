@@ -7,3 +7,4 @@ export * as template from './template';
 export * as html from './html';
 export * as jsx from './jsx';
 export * as transition from './transition';
+export * as raw from './raw';
